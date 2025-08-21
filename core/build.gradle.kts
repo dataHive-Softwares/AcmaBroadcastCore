@@ -1,20 +1,18 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+//    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
-    namespace = "com.broad.acmabroad"
+    namespace = "com.broad.core"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.broad.acmabroad"
         minSdk = 24
-        targetSdk = 36
-        versionCode = 1
-        versionName = "1.0.01"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -31,8 +29,14 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
+
+    buildFeatures {
+//        viewBinding true
+        dataBinding = true
+    }
+
 }
 
 dependencies {
@@ -40,7 +44,14 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
+
+
+    implementation(libs.sdp.android)
+    implementation(libs.rxandroid)
+    implementation(libs.androidx.cardview)
+
+
+
+
 
 }

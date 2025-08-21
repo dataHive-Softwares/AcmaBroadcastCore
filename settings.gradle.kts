@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Acma Broad tools"
 include(":app")
- 
+include(":helper")
+include(":core")
