@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -49,9 +50,5 @@ dependencies {
     implementation(libs.sdp.android)
     implementation(libs.rxandroid)
     implementation(libs.androidx.cardview)
-
-
-
-
-
 }
+
