@@ -46,6 +46,19 @@ publishing {
         register<MavenPublication>("release") {
             afterEvaluate {
                 from(components["release"])
+
+                pom.withXml {
+                    val root = asNode()
+                    val dependenciesNode = root.get("dependencies") as? groovy.util.Node ?: return@withXml
+
+                    val toRemove = dependenciesNode.children()
+                        .filterIsInstance<groovy.util.Node>()
+                        .filter { dep ->
+                            dep.get("artifactId")?.toString() == "core"
+                        }
+
+                    toRemove.forEach { dependenciesNode.remove(it) }
+                }
             }
         }
     }
