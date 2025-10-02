@@ -19,7 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Acma Broad tools"
+rootProject.name = "Acma Broad Core"
 include(":app")
-include(":helper")
-include(":core")

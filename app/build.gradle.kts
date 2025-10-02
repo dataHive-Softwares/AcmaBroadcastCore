@@ -1,14 +1,16 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("maven-publish")
+
 }
 
 android {
-    namespace = "com.broad.acmabroad"
+    namespace = "com.broad.acmabroad.core"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.broad.acmabroad"
+        applicationId = "com.broad.acmabroad.core"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -31,7 +33,11 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
     }
 }
 
@@ -43,4 +49,28 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
+    implementation(libs.rxandroid)
+
 }
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.broad.acmabroad"
+            artifactId = "core"
+            version = "1.0.01"
+
+        }
+    }
+}
+
+/*
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}*/
