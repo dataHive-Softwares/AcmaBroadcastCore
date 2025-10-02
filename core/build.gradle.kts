@@ -58,16 +58,26 @@ dependencies {
 //    }
 //}
 
-
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            afterEvaluate {
                 from(components["release"])
-                groupId = "com.github.dataHive-Softwares"
-                artifactId = "AcmaBroadcastCore"
-                version = "develop-SNAPSHOT"
             }
         }
     }
 }
+
+
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            create<MavenPublication>("release") {
+//                from(components["release"])
+//                groupId = "com.github.dataHive-Softwares"
+//                artifactId = "AcmaBroadcastCore"
+//                version = "develop-SNAPSHOT"
+//            }
+//        }
+//    }
+//}
