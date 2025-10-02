@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Acma Broad Core"
 include(":app")
+include(":core")

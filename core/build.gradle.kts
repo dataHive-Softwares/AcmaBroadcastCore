@@ -1,20 +1,19 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("maven-publish")
+
 }
 
 android {
-    namespace = "com.broad.acmabroad.core"
+    namespace = "com.acma.boradcast.core"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.broad.acmabroad.core"
         minSdk = 24
-        targetSdk = 36
-        versionCode = 1
-        versionName = "1.0.01"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -33,12 +32,29 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
+
     buildFeatures {
-        viewBinding = true
         dataBinding = true
+        viewBinding = true
     }
 }
 
 dependencies {
-    implementation(project(":core"))
+
+    api(libs.androidx.core.ktx)
+    api(libs.androidx.appcompat)
+    api(libs.material)
+
+    api(libs.rxandroid)
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.broad.acmabroad"
+            artifactId = "core"
+            version = "1.0.0"
+
+        }
+    }
 }
