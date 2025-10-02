@@ -1,4 +1,4 @@
-package com.broad.acmabroad.core.utils;
+package com.acma.boradcast.core.utils;
 
 import android.content.Context;
 

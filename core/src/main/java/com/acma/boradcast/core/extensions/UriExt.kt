@@ -1,4 +1,4 @@
-package com.broad.acmabroad.core.extensions
+package com.acma.boradcast.core.extensions
 
 import android.content.ContentResolver
 import android.net.Uri

@@ -1,4 +1,4 @@
-package com.broad.acmabroad.core.adapters
+package com.acma.boradcast.core.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

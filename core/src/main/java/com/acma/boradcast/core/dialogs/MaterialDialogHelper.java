@@ -1,4 +1,4 @@
-package com.broad.acmabroad.core.dialogs;
+package com.acma.boradcast.core.dialogs;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -10,7 +10,6 @@ import androidx.annotation.StringRes;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class MaterialDialogHelper {
-
     @NonNull
     public static Dialog createDialog(
             Context context,

@@ -1,4 +1,4 @@
-package com.broad.acmabroad.core.anim
+package com.acma.boradcast.core.anim
 
 import android.view.animation.Animation
 

@@ -1,4 +1,4 @@
-package com.broad.acmabroad.core.reactive;
+package com.acma.boradcast.core.reactive;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableOnSubscribe;
