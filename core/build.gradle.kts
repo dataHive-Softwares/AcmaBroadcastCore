@@ -48,13 +48,26 @@ dependencies {
     api(libs.rxandroid)
 }
 
-publishing {
-    publications {
-        register<MavenPublication>("release") {
-            groupId = "com.broad.acmabroad"
-            artifactId = "core"
-            version = "1.0.0"
+//publishing {
+//    publications {
+//        register<MavenPublication>("release") {
+//            groupId = "com.broad.acmabroad"
+//            artifactId = "core"
+//            version = "1.0.0"
+//        }
+//    }
+//}
 
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.dataHive-Softwares"
+                artifactId = "AcmaBroadcastCore"
+                version = "develop-SNAPSHOT"
+            }
         }
     }
 }
