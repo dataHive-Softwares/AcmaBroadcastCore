@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     id("maven-publish")
-
 }
 
 android {
@@ -48,15 +47,6 @@ dependencies {
     api(libs.rxandroid)
 }
 
-//publishing {
-//    publications {
-//        register<MavenPublication>("release") {
-//            groupId = "com.broad.acmabroad"
-//            artifactId = "core"
-//            version = "1.0.0"
-//        }
-//    }
-//}
 
 publishing {
     publications {
